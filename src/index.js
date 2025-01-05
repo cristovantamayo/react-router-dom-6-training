@@ -6,6 +6,8 @@ import { Menu } from "./components/Menu/index.tsx";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { About } from "./components/About/index.tsx";
+import { Posts } from "./components/Posts/index.tsx";
+import { Post } from "./components/Post/index.tsx";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -15,6 +17,8 @@ root.render(
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/posts/:id" element={<Post />} />
+        <Route path="/posts" element={<Posts />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
