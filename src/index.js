@@ -9,6 +9,7 @@ import { About } from "./components/About/index.tsx";
 import { Posts } from "./components/Posts/index.tsx";
 import { Post } from "./components/Post/index.tsx";
 import { Redirect } from "./components/Redirect/index.tsx";
+import { NotFound } from "./components/NotFound/index.tsx";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -21,6 +22,7 @@ root.render(
         <Route path="/posts/:id" element={<Post />} />
         <Route path="/posts" element={<Posts />} />
         <Route path="/redirect" element={<Redirect />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
