@@ -3,7 +3,7 @@ import "./style.css";
 import { useNavigate } from "react-router-dom";
 
 export const Redirect = () => {
-  const [time, setTime] = useState(5);
+  const [time, setTime] = useState(3);
   const timeout = useRef<NodeJS.Timeout | null>(null);
   const navigate = useNavigate();
 
@@ -17,7 +17,9 @@ export const Redirect = () => {
     }, 1000);
 
     if (time === 0) {
-      navigate("/");
+      navigate("/about", {
+        state: `This is the state from Redirect component: ${Math.random()}`,
+      });
     }
   }, [time, navigate]);
 
